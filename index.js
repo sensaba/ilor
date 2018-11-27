@@ -16,8 +16,8 @@ const {loadWeather, monitorFTP, sendReports} = require('./server/api/util/cronJo
 const app = express();
 
 //Connect to mongodb once at start - index.js
-mongoose.connect('mongodb://localhost:27017/lor', {useNewUrlParser: true})
-//mongoose.connect('mongodb://ilordb:i10rdb@cluster0-shard-00-00-cg4hm.mongodb.net:27017,cluster0-shard-00-01-cg4hm.mongodb.net:27017,cluster0-shard-00-02-cg4hm.mongodb.net:27017/lor?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', {useNewUrlParser: true})
+//mongoose.connect('mongodb://localhost:27017/lor', {useNewUrlParser: true})
+mongoose.connect('mongodb://ilordb:i10rdb@cluster0-shard-00-00-cg4hm.mongodb.net:27017,cluster0-shard-00-01-cg4hm.mongodb.net:27017,cluster0-shard-00-02-cg4hm.mongodb.net:27017/lor?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', {useNewUrlParser: true})
 .then(() => console.log('Connected to MongoDB..'))
 .catch(err => console.error('Could not connect to MongoDB..'));
 
