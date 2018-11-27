@@ -1,0 +1,32 @@
+{
+    "_comment": "set environment variable - SET NODE_ENV=",
+    "name": "LOR App - Default",
+    "mail": 
+    {
+        "service": "gmail",
+        "user": "landoptimizer18@gmail.com",
+        "subject" : "Land Optimizer Report",
+        "htmlMail": "html",
+        "textMail": "text"
+    },
+    "templates":
+    {
+        "userCreation": "../ilor/config/templates/welcomeuser/usercreation.html",
+        "userCrePic": "../ilor/config/templates/welcomeuser/nandhi.png",
+        "reportTemplate": "../ilor/config/templates/pdfreport/report.html",
+        "emailFrequency": "1",
+        "surveyFrequency": "30"
+    },
+    "_comment1": "set true to load the static data",
+    "loadStaticData":
+    {
+        "reporttype": false,
+        "propertytype": false
+    },
+    "weather":
+    {
+        "apikey": "3e2226d84aa19e7bf5c750f9643a46ee",
+        "endpoint": "http://api.openweathermap.org/data/2.5/weather?q=",
+        "appid": "&APPID="
+    }
+}

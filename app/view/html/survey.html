@@ -1,0 +1,64 @@
+<div ng-repeat="quest in QuestionArray">
+    <h2 layout=column layout-align="center center">Survey</h2>
+    <div style="padding: 2%" ng-repeat="quest in quest.format">
+        <div layout=column>
+                <div layout=row>
+                    <p>{{$index+1}}&nbsp;.&nbsp;</p>
+                    <p style="margin-bottom: 0%"  ng-model="quest.ques">{{quest.quest}}</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <md-select style="margin-top:-5px;width: 10%" ng-model="quest.ans" required="" placeholder="choose" md-no-asterisk="false" >
+                        <md-option ng-repeat="item in quest.answer" ng-value="item" ng-model="item">{{item}}</md-option>
+                    </md-select>
+                </div>
+            <md-divider></md-divider>
+        </div>
+    </div>
+        <md-button style="background-color: #efbb22" class="md-primary md-raised" ng-click="data(quest)">Submit</md-button>
+</div>
+
+<!-- scroll -->
+<!-- <body ng-app="anchorScrollOffsetExample">
+    <div class="fixed-header" ng-controller="headerCtrl">
+
+        <a href="" ng-click="gotoAnchor(1)">
+            Go to anchor A
+        </a>
+
+        <a href="" ng-click="gotoAnchor(2)">
+            Go to anchor B
+        </a>
+
+    </div>
+
+    <div style="height:1000px" id=1 class="anchor">
+        data 1
+    </div>
+
+    <div id=2 class="anchor">
+        Anchorof 5
+    </div>
+</body> -->
+
+<!-- scroll script -->
+<!-- <script>
+    (function(angular) {
+    'use strict';
+    angular.module('anchorScrollOffsetExample', [])
+    .run(['$anchorScroll', function($anchorScroll) {
+    $anchorScroll.yOffset = 30; // always scroll by 50 extra pixels
+    }])
+    .controller('headerCtrl', ['$anchorScroll', '$location', '$scope',
+    function($anchorScroll, $location, $scope) {
+    $scope.gotoAnchor = function(x) {
+    var newHash =x;
+    if ($location.hash() !== newHash) {
+    $location.hash(x);
+    } else {
+    $anchorScroll();
+    }
+    };
+    }
+    ]);
+    })(window.angular);
+</script> -->
+
