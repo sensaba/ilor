@@ -179,9 +179,9 @@ function prepareHtmlContents(contentObj)
             }
         }
     };
+    //Since conventional way does not embed the images, we follow below methodology
+    replacedStr = replaceImages(replacedStr);
 
-    replacedStr = replacedStr.replace('{{report_main}}', 
-    `file://${require.resolve('../../../config/templates/pdfreport/report_main.jpg')}`);
     let cObj={};
     cObj.replacedStr = replacedStr;
     cObj.options = options;
@@ -196,6 +196,28 @@ function prepareHtmlContents(contentObj)
     convertToPdf(cObj, contentObj);
 }
 
+function replaceImages(replacedStr)
+{
+    let imgPathObj ={};
+    imgPathObj.report_main = '../../../config/templates/pdfreport/report_main.jpg';
+    imgPathObj.contactus2 = '../../../config/templates/pdfreport/contactus2.jpg';
+
+    replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
+    replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
+    /*
+    replacedStr = replacedStr.replace('{{report_main}}', 
+    `file://${require.resolve('../../../config/templates/pdfreport/report_main.jpg')}`);
+    */
+
+    return replacedStr;
+}
+
+function reqResolve(imgPath)
+{
+    let iPath='';
+    iPath = `file://${require.resolve(imgPath)}`;
+    return iPath;
+}
 /*
 * This method is used to set values for Property Section
 */
