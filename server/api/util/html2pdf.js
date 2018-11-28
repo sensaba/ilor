@@ -147,10 +147,8 @@ function prepareHtmlContents(contentObj)
     { 
         format: fmt,        
         base: burl,
-        orientation: 'portrait',
-        border: "3",
-        paginationOffset: 1,
-        type: "pdf, png, jpg, gif",
+        orientation: 'portrait',        
+        paginationOffset: 1,        
         /*
         border: 
         {
@@ -182,6 +180,8 @@ function prepareHtmlContents(contentObj)
         }
     };
 
+    replacedStr = replacedStr.replace('{{report_main}}', 
+    `file://${require.resolve('./config/templates/pdfreport/report_main.jpg')}`);
     let cObj={};
     cObj.replacedStr = replacedStr;
     cObj.options = options;
