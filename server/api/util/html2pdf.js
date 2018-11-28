@@ -201,12 +201,29 @@ function replaceImages(replacedStr)
     let imgPathObj ={};
     imgPathObj.report_main = '../../../config/templates/pdfreport/report_main.jpg';
     imgPathObj.contactus2 = '../../../config/templates/pdfreport/contactus2.png';
+    imgPathObj.promotions = '../../../config/templates/pdfreport/promotions.jpg';
+    imgPathObj.location2 = '../../../config/templates/pdfreport/location2.png';
+    imgPathObj.soil1 = '../../../config/templates/pdfreport/soil1.png';
+    imgPathObj.Soil_report1 = '../../../config/templates/pdfreport/Soil_report1.jpg';
+    imgPathObj.announcement3 = '../../../config/templates/pdfreport/announcement3.png';
+    imgPathObj.vastu5 = '../../../config/templates/pdfreport/vastu5.png';
+    imgPathObj.Vastu_East = '../../../config/templates/pdfreport/Vastu_East.gif';
+    imgPathObj.Vastu_North = '../../../config/templates/pdfreport/Vastu_North.gif';
+    imgPathObj.Vastu_South = '../../../config/templates/pdfreport/Vastu_South.gif';
+    imgPathObj.weather = '../../../config/templates/pdfreport/weather.jpg';
 
     replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
     replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
-    
-    //replacedStr = replacedStr.replace('{{report_main}}', `file://${require.resolve(imgPathObj.report_main)}`);
-    //replacedStr = replacedStr.replace('{{contactus2}}', `file://${require.resolve(imgPathObj.contactus2)}`);
+    replacedStr = replacedStr.replace('{{promotions}}', reqResolve(imgPathObj.promotions));
+    replacedStr = replacedStr.replace('{{location2}}', reqResolve(imgPathObj.location2));
+    replacedStr = replacedStr.replace('{{soil1}}', reqResolve(imgPathObj.soil1));
+    replacedStr = replacedStr.replace('{{Soil_report1}}', reqResolve(imgPathObj.Soil_report1));
+    replacedStr = replacedStr.replace('{{announcement3}}', reqResolve(imgPathObj.announcement3));
+    replacedStr = replacedStr.replace('{{vastu5}}', reqResolve(imgPathObj.vastu5));
+    replacedStr = replacedStr.replace('{{Vastu_East}}', reqResolve(imgPathObj.Vastu_East));
+    replacedStr = replacedStr.replace('{{Vastu_North}}', reqResolve(imgPathObj.Vastu_North));
+    replacedStr = replacedStr.replace('{{Vastu_South}}', reqResolve(imgPathObj.Vastu_South));
+    replacedStr = replacedStr.replace('{{weather}}', reqResolve(imgPathObj.weather));
     
     /*
     replacedStr = replacedStr.replace('{{report_main}}', 
