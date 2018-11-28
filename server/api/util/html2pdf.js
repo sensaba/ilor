@@ -202,12 +202,16 @@ function replaceImages(replacedStr)
     imgPathObj.report_main = '../../../config/templates/pdfreport/report_main.jpg';
     imgPathObj.contactus2 = '../../../config/templates/pdfreport/contactus2.jpg';
 
-    replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
-    replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
+    //replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
+    //replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
+    
+    replacedStr = replacedStr.replace('{{report_main}}', `file://${require.resolve(imgPathObj.report_main)}`);
+    replacedStr = replacedStr.replace('{{contactus2}}', `file://${require.resolve(imgPathObj.contactus2)}`);
+    
     /*
     replacedStr = replacedStr.replace('{{report_main}}', 
     `file://${require.resolve('../../../config/templates/pdfreport/report_main.jpg')}`);
-    */
+    */    
 
     return replacedStr;
 }
