@@ -27,6 +27,7 @@
     "repVastuTemplate": "./config/templates/pdfreport/vastuSection.html",
     "repVastuTemplate1": "./config/templates/pdfreport/vastuSection1.html",
     "repUpcomingTemplate": "./config/templates/pdfreport/upcomingSection.html",
+    "repOndemandTemplate": "./config/templates/pdfreport/ondemandSection.html",
     "generatedPDFLoc": "./config/generatedPdf/",
     "coverhtml": "./config/templates/pdfreport/report_mail_content_v1.html",
     "emailFrequency": "1",

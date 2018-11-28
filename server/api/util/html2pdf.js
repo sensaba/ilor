@@ -81,7 +81,8 @@ function prepareHtmlContents(contentObj)
     let repSoilTemplate = configParams.get('templates.repSoilTemplate');    
     let repVastuTemplate = configParams.get('templates.repVastuTemplate');
     let repVastuTemplate1 = configParams.get('templates.repVastuTemplate1');
-    let repUpcomingTemplate = configParams.get('templates.repUpcomingTemplate');    
+    let repUpcomingTemplate = configParams.get('templates.repUpcomingTemplate');
+    let repOndemandTemplate = configParams.get('templates.repOndemandTemplate');    
 
     let mainhtml = fs.readFileSync(reportTemplate, 'utf8');    
     let prophtml = fs.readFileSync(repPropTemplate, 'utf8');    
@@ -89,12 +90,14 @@ function prepareHtmlContents(contentObj)
     let weatherhtml = fs.readFileSync(repWeaTemplate, 'utf8');    
     let vastuhtml = fs.readFileSync(repVastuTemplate, 'utf8');
     let vastuhtml1 = fs.readFileSync(repVastuTemplate1, 'utf8');
-    let upcominghtml = fs.readFileSync(repUpcomingTemplate, 'utf8');    
+    let upcominghtml = fs.readFileSync(repUpcomingTemplate, 'utf8');
+    let ondemandhtml = fs.readFileSync(repOndemandTemplate, 'utf8');
 
     //Templates are loaded as per ReportType = {Basic, Silver, Gold, Platinum}
     let replacedStr = mainhtml.replace(/#propertySection/i, prophtml);
     replacedStr = replacedStr.replace(/#soilSection/i, soilhtml);
     replacedStr = replaceProp(contentObj, replacedStr);
+    replacedStr = replacedStr.replace(/#ondemandSection/i, ondemandhtml);
     //Uncomment this code when adding these sections........ START.....
     replacedStr = replacedStr.replace(/#neighbourhoodSection/i, "");
     replacedStr = replacedStr.replace(/#neighbourhoodDevelopmentSection/i, "");
@@ -113,6 +116,8 @@ function prepareHtmlContents(contentObj)
     {
         case 'Basic':
             replacedStr = replacedStr.replace(/#weatherSection/i, "");
+            replacedStr = replacedStr.replace(/#vastuSection/i, "");
+            replacedStr = replacedStr.replace(/#vastuSection1/i, "");
             break;
         case 'Silver':
             replacedStr = replacedStr.replace(/#weatherSection/i, weatherhtml);
