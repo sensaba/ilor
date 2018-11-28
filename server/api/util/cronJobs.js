@@ -109,7 +109,7 @@ function monitorFTP()
 function sendReports()
 {        
     //{minute: config.get('cronTimings.ftpLoad')}
-    let repSender = scheduler.scheduleJob('*/4 * * * *', function()    //for test, it runs every 10 secs
+    let repSender = scheduler.scheduleJob('*/11 * * * *', function()    //for test, it runs every 10 secs
     {
         //console.log('........ STARTING Send Reports CRON.......');        
         let propObj={};        
