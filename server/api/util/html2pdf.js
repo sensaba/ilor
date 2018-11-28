@@ -181,7 +181,7 @@ function prepareHtmlContents(contentObj)
     };
 
     replacedStr = replacedStr.replace('{{report_main}}', 
-    `file://${require.resolve('./config/templates/pdfreport/report_main.jpg')}`);
+    `file://${require.resolve('../../../config/templates/pdfreport/report_main.jpg')}`);
     let cObj={};
     cObj.replacedStr = replacedStr;
     cObj.options = options;
