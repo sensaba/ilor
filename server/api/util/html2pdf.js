@@ -148,7 +148,9 @@ function prepareHtmlContents(contentObj)
         format: fmt,        
         base: burl,
         orientation: 'portrait',
+        border: "3",
         paginationOffset: 1,
+        type: "pdf, png, jpg, gif",
         /*
         border: 
         {
