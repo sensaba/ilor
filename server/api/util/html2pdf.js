@@ -268,18 +268,23 @@ function replaceProp(contentObj, replacedStr)
 */
 function replaceWeather(contentObj, replacedStr)
 {
-    replacedStr = replacedStr.replace(/#cityName/i, contentObj.weatherDetails[0].city);
-    replacedStr = replacedStr.replace(/#weaDesc/i, contentObj.weatherDetails[0].weaDesc);
-    replacedStr = replacedStr.replace(/#minTemp/i, contentObj.weatherDetails[0].minTemp.value + ' °C');
-    replacedStr = replacedStr.replace(/#maxTemp/i, contentObj.weatherDetails[0].maxTemp.value + ' °C');
-    replacedStr = replacedStr.replace(/#windSpeed/i, contentObj.weatherDetails[0].windSpeed.value + ' km/h');
-    replacedStr = replacedStr.replace(/#windDegree/i, contentObj.weatherDetails[0].windDegree.value);
-    replacedStr = replacedStr.replace(/#sunRise/i, contentObj.weatherDetails[0].sunrise);
-    replacedStr = replacedStr.replace(/#sunSet/i, contentObj.weatherDetails[0].sunset);
-    replacedStr = replacedStr.replace(/#weaIcon/i, contentObj.weatherDetails[0].weaIcon);
-    replacedStr = replacedStr.replace(/#pressure/i, contentObj.weatherDetails[0].pressure);
-    
-    return replacedStr;
+    if (contentObj != null && contentObj.length > 0)
+    {
+        replacedStr = replacedStr.replace(/#cityName/i, contentObj.weatherDetails[0].city);
+        replacedStr = replacedStr.replace(/#weaDesc/i, contentObj.weatherDetails[0].weaDesc);
+        replacedStr = replacedStr.replace(/#minTemp/i, contentObj.weatherDetails[0].minTemp.value + ' °C');
+        replacedStr = replacedStr.replace(/#maxTemp/i, contentObj.weatherDetails[0].maxTemp.value + ' °C');
+        replacedStr = replacedStr.replace(/#windSpeed/i, contentObj.weatherDetails[0].windSpeed.value + ' km/h');
+        replacedStr = replacedStr.replace(/#windDegree/i, contentObj.weatherDetails[0].windDegree.value);
+        replacedStr = replacedStr.replace(/#sunRise/i, contentObj.weatherDetails[0].sunrise);
+        replacedStr = replacedStr.replace(/#sunSet/i, contentObj.weatherDetails[0].sunset);
+        replacedStr = replacedStr.replace(/#weaIcon/i, contentObj.weatherDetails[0].weaIcon);
+        replacedStr = replacedStr.replace(/#pressure/i, contentObj.weatherDetails[0].pressure);
+        
+        return replacedStr;
+    }
+    else
+        return replacedStr.replace(/#weatherSection/i, "");
 }
 
 /*
