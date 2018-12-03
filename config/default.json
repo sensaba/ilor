@@ -1,0 +1,84 @@
+{
+    "_info": "set environment variable - SET NODE_ENV=",
+    "_info1": "For setting PORT - SET PORT=5000",     
+    "name": "LOR App - Default",
+    "domainName": "ispor.herokuapp.com",
+    "port": "process.env.PORT",
+    "environ": "staging",
+    "http": "http://",
+    "https": "https://",
+    "mail": 
+    {
+        "service": "gmail",
+        "user": "istarpropoptrep@gmail.com",
+        "subject" : "SPOR - ",
+        "htmlMail": "html",
+        "textMail": "text"
+    },
+    "templates":
+    {
+        "format": "Letter",
+        "base": "file:///config/templates/pdfreport/",
+        "userCreation": "./config/templates/welcomeuser/usercreation.html",
+        "userpwdReset": "./config/templates/welcomeuser/userpwdreset.html",
+        "userCrePic": "./config/templates/welcomeuser/nandhi.png",
+        "repMTemplate": "./config/templates/pdfreport/report_v1.html",
+        "repPropTemplate": "./config/templates/pdfreport/propertySection.html",
+        "repWeaTemplate": "./config/templates/pdfreport/weatherSection.html",
+        "repSoilTemplate": "./config/templates/pdfreport/soilSection.html",
+        "repVastuTemplate": "./config/templates/pdfreport/vastuSection.html",
+        "repVastuTemplate1": "./config/templates/pdfreport/vastuSection1.html",
+        "repUpcomingTemplate": "./config/templates/pdfreport/upcomingSection.html",
+        "repOndemandTemplate": "./config/templates/pdfreport/ondemandSection.html",
+        "generatedPDFLoc" : "./config/generatedPdf/",
+        "coverhtml": "./config/templates/pdfreport/report_mail_content_v1.html",
+        "emailFrequency": "1",
+        "surveyFrequency": "30",
+        "detailedReportFrequency": "1",
+        "welcomeUrl" : "/#!/emailAuth?cusId="
+    },
+    "_comment1": "set true to load the static data",
+    "loadStaticData":
+    {
+        "reporttype": false,
+        "propertytype": false
+    },
+    "weather":
+    {
+        "apikey": "4f69255c7eb5e1ed06c59ee0753b7ce8",
+        "endpoint": "http://api.openweathermap.org/data/2.5/weather?q=",
+        "appid": "&APPID="
+    },
+    "ftp":
+    {
+        "host": "ftp.drivehq.com",
+        "port": "21",
+        "user": "sciftp"
+    },
+    "ftpLocation":
+    {
+        "localDriveCustomer": "./server/ftpfiles/customer/",
+        "localDriveProperty": "./server/ftpfiles/property/",
+        "ftpServerCustomer": "/lor/wellnest/customer/",
+        "ftpServerProperty": "/lor/wellnest/property/",
+        "localArchiveCustomer": "./server/ftpfiles/customer/archive/",
+        "localArchiveProperty": "./server/ftpfiles/property/archive/",
+        "cusFileName": "Customer_Input_v1.xlsx",
+        "propFileName": "Property_Input_v1.xlsx"
+    },
+    "cronTimings":
+    {        
+        "weatherLoad": "12",
+        "ftpLoad": "2",
+        "reportFrequency": "5"
+    },
+    "reportDef":
+    {
+        "basic": ["propertyDetail","location", "history", "soil", "newPromotions"],
+        "silver": ["propertyDetail","location", "history", "soil", "weather","vasthu","newPromotions"],
+        "gold": ["propertyDetail","location", "history", "soil", "weather","vasthu",
+            "socilogy", "culturalGeography","newPromotions"],
+        "platinum": ["propertyDetail","location", "history", "soil", "weather","vasthu","socilogy", 
+            "culturalGeography","economics", "newPromotions"]
+    }
+}

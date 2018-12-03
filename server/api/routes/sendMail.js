@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport(
     {
         //user: 'landoptimizer18@gmail.com',
         user: uName,
-        pass: 'l@nd0pt1m1zer18'
+        pass: '1st@rpr0p0ptrep'
     }
 });
 

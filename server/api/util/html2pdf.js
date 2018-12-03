@@ -23,7 +23,7 @@ function convertToPdf(conObj, passedObj)
             let dbObj = {};
             console.log('html2pdf ------- Email data being set.......');
             let mSub = configParams.get('mail.subject');
-            mSub = mSub  + ' - Reports';
+            mSub = mSub  + ' Detailed Reports';
             //console.log('html2pdf - convertToPDF() - Email Subject: ', mSub);
             let mailObj = 
             {

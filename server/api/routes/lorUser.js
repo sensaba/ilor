@@ -273,7 +273,7 @@ router.post('/', jsonParser, async (req, res) =>
     
                         //Construct mail object
                         let mSub = config.get('mail.subject');
-                        mSub = mSub + ' - User Creation';
+                        mSub = mSub + ' User Creation';
                         let mailObj = 
                         {
                             from: config.get('mail.user'),
