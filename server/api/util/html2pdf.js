@@ -268,7 +268,7 @@ function replaceProp(contentObj, replacedStr)
 */
 function replaceWeather(contentObj, replacedStr)
 {
-    if (contentObj != null && contentObj.length > 0)
+    if (contentObj != null && contentObj.weatherDetails.length > 0)
     {
         replacedStr = replacedStr.replace(/#cityName/i, contentObj.weatherDetails[0].city);
         replacedStr = replacedStr.replace(/#weaDesc/i, contentObj.weatherDetails[0].weaDesc);
