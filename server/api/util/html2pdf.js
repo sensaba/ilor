@@ -71,7 +71,8 @@ function convertToPdf(conObj, passedObj)
 * Plug in the details to the html template like individual weather data, etc.
 */
 function prepareHtmlContents(contentObj)
-{    
+{
+    let weaIcon='';
     let rType = contentObj.customerDetails[0].reportType;
     let cId = contentObj.customerDetails[0].cusId;
 
@@ -211,9 +212,9 @@ function replaceImages(replacedStr)
     imgPathObj.Vastu_North = '../../../config/templates/pdfreport/Vastu_North.gif';
     imgPathObj.Vastu_South = '../../../config/templates/pdfreport/Vastu_South.gif';
     imgPathObj.weather = '../../../config/templates/pdfreport/weather.jpg';
-    if (contentObj.weatherDetails != null && contentObj.weatherDetails.length > 0)
-        imgPathObj.wicon = '../../../config/templates/pdfreport/openweathericons/'+contentObj.weatherDetails[0].weaIcon;
-
+    if (weaIcon != '')
+        imgPathObj.wicon = '../../../config/templates/pdfreport/openweathericons/'+weaIcon;
+    
     replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
     replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
     replacedStr = replacedStr.replace('{{promotions}}', reqResolve(imgPathObj.promotions));
@@ -283,6 +284,7 @@ function replaceWeather(contentObj, replacedStr)
         replacedStr = replacedStr.replace(/#sunRise/i, contentObj.weatherDetails[0].sunrise);
         replacedStr = replacedStr.replace(/#sunSet/i, contentObj.weatherDetails[0].sunset);
         //replacedStr = replacedStr.replace(/#weaIcon/i, contentObj.weatherDetails[0].weaIcon);
+        weaIcon = contentObj.weatherDetails[0].weaIcon;
         replacedStr = replacedStr.replace(/#pressure/i, contentObj.weatherDetails[0].pressure);
         
         return replacedStr;
