@@ -211,6 +211,8 @@ function replaceImages(replacedStr)
     imgPathObj.Vastu_North = '../../../config/templates/pdfreport/Vastu_North.gif';
     imgPathObj.Vastu_South = '../../../config/templates/pdfreport/Vastu_South.gif';
     imgPathObj.weather = '../../../config/templates/pdfreport/weather.jpg';
+    if (contentObj.weatherDetails != null && contentObj.weatherDetails.length > 0)
+        imgPathObj.wicon = '../../../config/templates/pdfreport/openweathericons/'+contentObj.weatherDetails[0].weaIcon;
 
     replacedStr = replacedStr.replace('{{report_main}}', reqResolve(imgPathObj.report_main));
     replacedStr = replacedStr.replace('{{contactus2}}', reqResolve(imgPathObj.contactus2));
@@ -220,10 +222,12 @@ function replaceImages(replacedStr)
     replacedStr = replacedStr.replace('{{Soil_report1}}', reqResolve(imgPathObj.Soil_report1));
     replacedStr = replacedStr.replace('{{announcement3}}', reqResolve(imgPathObj.announcement3));
     replacedStr = replacedStr.replace('{{vastu5}}', reqResolve(imgPathObj.vastu5));
+    replacedStr = replacedStr.replace('{{vastu6}}', reqResolve(imgPathObj.vastu5));
     replacedStr = replacedStr.replace('{{Vastu_East}}', reqResolve(imgPathObj.Vastu_East));
     replacedStr = replacedStr.replace('{{Vastu_North}}', reqResolve(imgPathObj.Vastu_North));
     replacedStr = replacedStr.replace('{{Vastu_South}}', reqResolve(imgPathObj.Vastu_South));
     replacedStr = replacedStr.replace('{{weather}}', reqResolve(imgPathObj.weather));
+    replacedStr = replacedStr.replace('{{wicon}}', reqResolve(imgPathObj.wicon));
     
     /*
     replacedStr = replacedStr.replace('{{report_main}}', 
@@ -278,7 +282,7 @@ function replaceWeather(contentObj, replacedStr)
         replacedStr = replacedStr.replace(/#windDegree/i, contentObj.weatherDetails[0].windDegree.value);
         replacedStr = replacedStr.replace(/#sunRise/i, contentObj.weatherDetails[0].sunrise);
         replacedStr = replacedStr.replace(/#sunSet/i, contentObj.weatherDetails[0].sunset);
-        replacedStr = replacedStr.replace(/#weaIcon/i, contentObj.weatherDetails[0].weaIcon);
+        //replacedStr = replacedStr.replace(/#weaIcon/i, contentObj.weatherDetails[0].weaIcon);
         replacedStr = replacedStr.replace(/#pressure/i, contentObj.weatherDetails[0].pressure);
         
         return replacedStr;
