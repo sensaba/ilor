@@ -5,6 +5,8 @@ const configParams = require('config');
 const mail = require('../routes/sendMail');
 const internet = require('is-reachable');
 
+let weaIcon='';
+
 function convertToPdf(conObj, passedObj)
 {
     let d = Date.now();
@@ -71,8 +73,7 @@ function convertToPdf(conObj, passedObj)
 * Plug in the details to the html template like individual weather data, etc.
 */
 function prepareHtmlContents(contentObj)
-{
-    let weaIcon='';
+{    
     let rType = contentObj.customerDetails[0].reportType;
     let cId = contentObj.customerDetails[0].cusId;
 
