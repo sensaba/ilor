@@ -201,7 +201,7 @@ function prepareHtmlContents(contentObj)
 function replaceImages(replacedStr)
 {
     let imgPathObj ={};
-    imgPathObj.report_main = '../../../config/templates/pdfreport/Report_Image_v2.jpg';
+    imgPathObj.report_main = '../../../config/templates/pdfreport/Report_Image_v3.jpg';
     imgPathObj.contactus2 = '../../../config/templates/pdfreport/contactus2.png';
     imgPathObj.promotions = '../../../config/templates/pdfreport/promotions.jpg';
     imgPathObj.location2 = '../../../config/templates/pdfreport/location2.png';
