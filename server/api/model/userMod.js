@@ -265,6 +265,9 @@ async function getUsersForSendingReport()
             .and({cusId: {$in: finreport}})
             .select({cusId: 1, email: 1, reportType: 1, referringCompany: 1, 
                 reportSubscribed:1, mailOccasion: 1, mailSentDate:1,  _id:0});
+            
+            //removing duplicates to avoid repeated emails
+            reports = _.uniqBy(reports,'cusId');
     
             //console.log('getUsersForSendingReport - Report needs to be sent to: ', reports); 
             
