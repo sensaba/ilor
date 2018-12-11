@@ -228,8 +228,11 @@ function replaceImages(replacedStr)
     replacedStr = replacedStr.replace('{{Vastu_East}}', reqResolve(imgPathObj.Vastu_East));
     replacedStr = replacedStr.replace('{{Vastu_North}}', reqResolve(imgPathObj.Vastu_North));
     replacedStr = replacedStr.replace('{{Vastu_South}}', reqResolve(imgPathObj.Vastu_South));
-    replacedStr = replacedStr.replace('{{weather}}', reqResolve(imgPathObj.weather));
-    replacedStr = replacedStr.replace('{{wicon}}', reqResolve(imgPathObj.wicon));
+	if (weaIcon != '')
+	{		
+		replacedStr = replacedStr.replace('{{weather}}', reqResolve(imgPathObj.weather));
+		replacedStr = replacedStr.replace('{{wicon}}', reqResolve(imgPathObj.wicon));
+	}
     
     /*
     replacedStr = replacedStr.replace('{{report_main}}', 
